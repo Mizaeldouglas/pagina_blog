@@ -2,7 +2,7 @@ import styles from './styles.module.scss'
 import Image from 'next/image'
 import logo from '../../../public/images/logo.svg'
 
-import Link from 'next/link'
+import { ActiveLink } from '../ActiveLink'
 
 
 export function Header(){
@@ -14,17 +14,19 @@ export function Header(){
 					<Image src={ logo } alt='Logo' />
 				</a>
 				<nav>
-					<Link href="/">
+					<ActiveLink href="/" activeClassName={styles.active}>
 						<a>Home</a>
-					</Link>
-					<Link href="/posts">
+					</ActiveLink >
+
+					<ActiveLink href="/posts" activeClassName={styles.active}>
 						<a>Conteudo</a>
-					</Link>
-					<Link href="/sobre">
+					</ActiveLink>
+					
+					<ActiveLink href="/sobre" activeClassName={styles.active}>
 						<a>Quem somos</a>
-					</Link>
+					</ActiveLink>
 				</nav>
-				<a  className={styles.headerButtom} type='button' href='www.google.com'>
+				<a  className={styles.readyButtom} type='button' href='www.google.com'>
 					Começar
 				</a>
 			</div>
